@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to the Shop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <!-- <script src="../static/js/makeWallet.js"></script> -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    
+  </head>
+    <body>
+        <script>
+            $(function() {
+                $('#btnmakeWallet').click(function() {
+
+                    $.ajax({
+                        url: '/makeWallet',
+                        data: $('#walletForm').serialize(),
+                        type: 'POST',
+                        success: function(response) {
+                         location.href = "http://192.168.50.28:5000/showShop?id={{id}}"
+                        },
+                        error: function(error) {
+                         console.log(error);
+                        }
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(function() {
+                $('#btnmakeOrder').click(function() {
+
+                    $.ajax({
+                        url: '/makeOrder',
+                        data: $('#orderForm').serialize(),
+                        type: 'POST',
+                        success: function(response) {
+                         location.href = "http://192.168.50.28:5000/showShop?id={{id}}"
+                        },
+                        error: function(error) {
+                         console.log(error);
+                        }
+                    });
+                });
+            });
+        </script>
+        <div class="jumbotron">
+        {% for foo in user %}
+          <h1>Welcome {{foo[0]}}</h1>
+        {% endfor %}
+        <form id="walletForm" name="walletForm">
+            <select name="coinlist">
+
+            {% for foo in coin %}
+
+              <option value={{foo[0]}}>{{foo[1]}}</option> 
+
+            {% endfor %}
+
+            </select>
+          
+            <input type="hidden" name="userID" value={{id}} >
+    
+
+            <button id="btnmakeWallet" class="btn btn-lg btn-primary btn-block" type="button">Create Wallet</button>
+        </form>
+        </div>
+        <table style = "width:100%">
+        <tr>
+          <th>Wallet Address</th>
+          <th>Name</th>
+          <th>Amount</th>
+        </tr>
+      {% for foo in wallet %}
+        <tr>
+          <td>{{foo[0]}}</td>
+          <td>{{foo[2]}}</td>
+          <td>{{foo[1]}}</td>
+        </tr>
+      {% endfor %}
+      </table>
+      <div class="jumbotron">
+      <h1> Create Order </h1>
+      <form id="orderForm" name="orderForm">
+          
+            <input type="hidden" name="userID" value={{id}} >
+            <input type="text" name="toAdd" placeholder="To Address">
+            <input type="text" name="fromAdd" placeholder="From Address">
+            <input type="text" name="amount" placeholder="Amount">
+
+    
+
+            <button id="btnmakeOrder" class="btn btn-lg btn-primary btn-block" type="button">Create Order</button>
+        </form>
+    </div>
+    </body>
+</html>

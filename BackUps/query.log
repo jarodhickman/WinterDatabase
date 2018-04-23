@@ -1,0 +1,298 @@
+/usr/sbin/mysqld, Version: 5.7.21-0ubuntu0.16.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2018-04-22T04:48:57.543426Z
+# User@Host: admin[admin] @ localhost []  Id:    46
+# Query_time: 0.000364  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use bitbizzar;
+SET timestamp=1524372537;
+set global slow_query_log = 1;
+/usr/sbin/mysqld, Version: 5.7.21-0ubuntu0.16.04.1 ((Ubuntu)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2018-04-22T14:35:04.984121Z
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []  Id:    48
+# Query_time: 0.022164  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524407704;
+FLUSH LOGS;
+# Time: 2018-04-22T18:46:53.118175Z
+# User@Host: admin[admin] @ localhost []  Id:    46
+# Query_time: 0.000688  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use bitbizzar;
+SET timestamp=1524422813;
+set global long_query_time = .002;
+# Time: 2018-04-22T18:47:02.813976Z
+# User@Host: admin[admin] @ localhost []  Id:    46
+# Query_time: 0.001763  Lock_time: 0.000669 Rows_sent: 22  Rows_examined: 22
+SET timestamp=1524422822;
+select * from Wallet;
+# Time: 2018-04-22T18:47:06.975240Z
+# User@Host: admin[admin] @ localhost []  Id:    46
+# Query_time: 0.000908  Lock_time: 0.000503 Rows_sent: 16  Rows_examined: 16
+SET timestamp=1524422826;
+show profile;
+# Time: 2018-04-22T19:16:03.470512Z
+# User@Host: admin[admin] @ localhost []  Id:    46
+# Query_time: 0.000883  Lock_time: 0.000480 Rows_sent: 22  Rows_examined: 22
+SET timestamp=1524424563;
+select * from Wallet;
+# Time: 2018-04-22T22:52:23.399296Z
+# User@Host: admin[admin] @ localhost []  Id:    50
+# Query_time: 0.000575  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1524437543;
+select @@version_comment limit 1;
+# Time: 2018-04-22T22:52:33.251727Z
+# User@Host: admin[admin] @ localhost []  Id:    50
+# Query_time: 0.006957  Lock_time: 0.000500 Rows_sent: 496  Rows_examined: 992
+SET timestamp=1524437553;
+show global variables;
+# Time: 2018-04-22T22:56:18.128183Z
+# User@Host: admin[admin] @ localhost []  Id:    52
+# Query_time: 0.001113  Lock_time: 0.000663 Rows_sent: 1  Rows_examined: 26
+SET timestamp=1524437778;
+SELECT * FROM User WHERE User_Name = 'bitbizzar' AND User_Password = 'root';
+# Time: 2018-04-22T22:56:25.671338Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.004013  Lock_time: 0.000239 Rows_sent: 1  Rows_examined: 1020
+SET timestamp=1524437785;
+SHOW VARIABLES LIKE 'gtid\_mode';
+# Time: 2018-04-22T22:56:25.675842Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.004374  Lock_time: 0.001422 Rows_sent: 0  Rows_examined: 31
+SET timestamp=1524437785;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('bitbizzar'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME;
+# Time: 2018-04-22T22:56:25.676665Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000761  Lock_time: 0.000196 Rows_sent: 0  Rows_examined: 31
+SET timestamp=1524437785;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('bitbizzar')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# Time: 2018-04-22T22:56:25.677824Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.001022  Lock_time: 0.000062 Rows_sent: 0  Rows_examined: 1020
+SET timestamp=1524437785;
+SHOW VARIABLES LIKE 'ndbinfo\_version';
+# Time: 2018-04-22T22:56:25.679121Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000340  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437785;
+show table status like 'BankInfo';
+# Time: 2018-04-22T22:56:25.680128Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000285  Lock_time: 0.000000 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1524437785;
+show fields from `BankInfo`;
+# Time: 2018-04-22T22:56:25.681608Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000234  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437785;
+show table status like 'Email\_Admins';
+# Time: 2018-04-22T22:56:25.682578Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000245  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437785;
+SHOW FIELDS FROM `Email_Admins`;
+# Time: 2018-04-22T22:56:25.683412Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000265  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437785;
+SHOW TRIGGERS LIKE 'Email\_Admins';
+# Time: 2018-04-22T22:56:25.692849Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000232  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437785;
+show table status like 'PutOption';
+# Time: 2018-04-22T22:56:25.713589Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.017893  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437785;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `TimeInForce`;
+# Time: 2018-04-22T22:56:25.714705Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000293  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437785;
+SHOW TRIGGERS LIKE 'TimeInForce';
+# Time: 2018-04-22T22:56:25.715433Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000221  Lock_time: 0.000000 Rows_sent: 7  Rows_examined: 7
+SET timestamp=1524437785;
+show fields from `User`;
+# Time: 2018-04-22T22:56:25.716164Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000307  Lock_time: 0.000000 Rows_sent: 26  Rows_examined: 26
+SET timestamp=1524437785;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `User`;
+# Time: 2018-04-22T22:56:25.725049Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000379  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437785;
+SHOW TRIGGERS LIKE 'User';
+# Time: 2018-04-22T22:56:25.728135Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000241  Lock_time: 0.000000 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1524437785;
+show fields from `Wallet`;
+# Time: 2018-04-22T22:56:25.728471Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000252  Lock_time: 0.000000 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1524437785;
+show fields from `Wallet`;
+# Time: 2018-04-22T22:56:25.729317Z
+# User@Host: admin[admin] @ localhost []  Id:    54
+# Query_time: 0.000228  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437785;
+SHOW TRIGGERS LIKE 'Wallet';
+# Time: 2018-04-22T22:56:27.651751Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.001254  Lock_time: 0.000121 Rows_sent: 1  Rows_examined: 1020
+SET timestamp=1524437787;
+SHOW VARIABLES LIKE 'gtid\_mode';
+# Time: 2018-04-22T22:56:27.653533Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.001711  Lock_time: 0.000347 Rows_sent: 0  Rows_examined: 31
+SET timestamp=1524437787;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('bitbizzar'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME;
+# Time: 2018-04-22T22:56:27.654869Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000711  Lock_time: 0.000214 Rows_sent: 0  Rows_examined: 31
+SET timestamp=1524437787;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('bitbizzar')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# Time: 2018-04-22T22:56:27.656159Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.001134  Lock_time: 0.000066 Rows_sent: 0  Rows_examined: 1020
+SET timestamp=1524437787;
+SHOW VARIABLES LIKE 'ndbinfo\_version';
+# Time: 2018-04-22T22:56:27.658189Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000260  Lock_time: 0.000000 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1524437787;
+show fields from `BankInfo`;
+# Time: 2018-04-22T22:56:27.659354Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000219  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437787;
+SHOW TRIGGERS LIKE 'BankInfo';
+# Time: 2018-04-22T22:56:27.659764Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000295  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437787;
+show table status like 'Email\_Admins';
+# Time: 2018-04-22T22:56:27.660626Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000240  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437787;
+SHOW FIELDS FROM `Email_Admins`;
+# Time: 2018-04-22T22:56:27.679540Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.018362  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437787;
+show table status like 'ExOrder';
+# Time: 2018-04-22T22:56:27.680417Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000290  Lock_time: 0.000000 Rows_sent: 6  Rows_examined: 6
+SET timestamp=1524437787;
+show fields from `ExOrder`;
+# Time: 2018-04-22T22:56:27.681507Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000226  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437787;
+SHOW TRIGGERS LIKE 'ExOrder';
+# Time: 2018-04-22T22:56:27.683572Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000232  Lock_time: 0.000000 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1524437787;
+show fields from `Futures`;
+# Time: 2018-04-22T22:56:27.685077Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000230  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437787;
+show table status like 'OrderLimit';
+# Time: 2018-04-22T22:56:27.686039Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000354  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1524437787;
+show fields from `OrderLimit`;
+# Time: 2018-04-22T22:56:27.687591Z
+# User@Host: admin[admin] @ localhost []  Id:    55
+# Query_time: 0.000233  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437787;
+show table status like 'Product';
+# Time: 2018-04-22T22:56:28.801554Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.001177  Lock_time: 0.000096 Rows_sent: 1  Rows_examined: 1020
+SET timestamp=1524437788;
+SHOW VARIABLES LIKE 'gtid\_mode';
+# Time: 2018-04-22T22:56:28.803009Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.001360  Lock_time: 0.000303 Rows_sent: 0  Rows_examined: 31
+SET timestamp=1524437788;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('bitbizzar'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME;
+# Time: 2018-04-22T22:56:28.803723Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000626  Lock_time: 0.000179 Rows_sent: 0  Rows_examined: 31
+SET timestamp=1524437788;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('bitbizzar')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# Time: 2018-04-22T22:56:28.804932Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.001113  Lock_time: 0.000062 Rows_sent: 0  Rows_examined: 1020
+SET timestamp=1524437788;
+SHOW VARIABLES LIKE 'ndbinfo\_version';
+# Time: 2018-04-22T22:56:28.805994Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000226  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437788;
+show table status like 'BankInfo';
+# Time: 2018-04-22T22:56:28.806543Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000230  Lock_time: 0.000000 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1524437788;
+show fields from `BankInfo`;
+# Time: 2018-04-22T22:56:28.807536Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000220  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437788;
+SHOW TRIGGERS LIKE 'BankInfo';
+# Time: 2018-04-22T22:56:28.807915Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000263  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437788;
+show table status like 'Email\_Admins';
+# Time: 2018-04-22T22:56:28.808514Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000213  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437788;
+SHOW FIELDS FROM `Email_Admins`;
+# Time: 2018-04-22T22:56:28.811541Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000221  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437788;
+show table status like 'Futures';
+# Time: 2018-04-22T22:56:28.821210Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000918  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437788;
+SHOW TRIGGERS LIKE 'Product';
+# Time: 2018-04-22T22:56:28.824767Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000356  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1524437788;
+show fields from `PutOption`;
+# Time: 2018-04-22T22:56:28.826266Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000247  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437788;
+SHOW TRIGGERS LIKE 'PutOption';
+# Time: 2018-04-22T22:56:28.827553Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000314  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1524437788;
+show table status like 'TimeInForce';
+# Time: 2018-04-22T22:56:28.832551Z
+# User@Host: admin[admin] @ localhost []  Id:    56
+# Query_time: 0.000256  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1524437788;
+show fields from `TimeInForce`;
+# Time: 2018-04-22T22:58:32.236822Z
+# User@Host: admin[admin] @ localhost []  Id:    59
+# Query_time: 0.002411  Lock_time: 0.000269 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1524437912;
+INSERT INTO Product (prodName, prodValue) VALUES ('bestcoin', '8098');

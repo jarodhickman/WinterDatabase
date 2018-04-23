@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to the Shop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/makeWallet.js"></script>
+    <script src="../static/js/signUp.js"></script>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li>
+            <li role="presentation" class="active"><a href="#">Sign Up</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"></h3>
+      </div>
+ 
+      <div class="jumbotron">
+        {% for foo in user %}
+          <h1>Welcome {{foo[0]}}</h1>
+        {% endfor %}
+        <form id="walletForm">
+        <label for="coinlist" class="sr-only">Create Wallet</label>
+        <select name="coinlist">
+        {% for foo in coin %}
+          <option value={{foo[0]}}>{{foo[1]}}</option> 
+        {% endfor %}
+        </select>        
+        <button id="btnmakeWallet" class="btn btn-lg btn-primary btn-block" type="button">Create Wallet</button>
+      </form>
+      </div>
+      <table style = "width:100%">
+        <tr>
+          <th>Wallet Address</th>
+          <th>Amount</th>
+          <th>Name</th>
+        </tr>
+      {% for foo in wallet %}
+        <tr>
+          <td>{{foo[0]}}</td>
+          <td>{{foo[2]}}</td>
+          <td>{{foo[1]}}</td>
+        </tr>
+      {% endfor %}
+      </table>
+  
+ 
+      <footer class="footer">
+        <p>&copy; BitBizzar 2018</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
